@@ -29,7 +29,7 @@ const Hero = () => {
           }
         >
           <Image
-            src={`/preview/image-1.png`}
+            src={`/why-us/image-1.png`}
             alt="App preview"
             height={812}
             width={375}

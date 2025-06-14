@@ -2,20 +2,33 @@ import Link from "next/link";
 import Image from "next/image";
 
 import {
-  FaXTwitter,
   FaFacebook,
   FaInstagram,
   FaWhatsapp,
+  FaCopyright,
 } from "react-icons/fa6";
 
-const items = [
-  { name: "الشروط والأحكام", link: "/terms-and-conditions" },
-  { name: "سياسة الخصوصية", link: "/privacy-policy" },
-  { name: "الأسئلة الشائعة", link: "/frequently-asked-questions" },
+const footerLists = [
+  {
+    title: "الشركة",
+    items: [
+      { name: "لماذا نحن", link: "/#why-us" },
+      { name: "المميزات", link: "/#features" },
+      { name: "كيف تعمل المنصة", link: "/#how-it-works" },
+      { name: "تواصل معنا", link: "/contact-us" },
+    ],
+  },
+  {
+    title: "القوانين",
+    items: [
+      { name: "الشروط والأحكام", link: "/terms-and-conditions" },
+      { name: "سياسة الخصوصية", link: "/privacy-policy" },
+      { name: "الأسئلة الشائعة", link: "/frequently-asked-questions" },
+    ],
+  },
 ];
 
 const socialMedia = [
-  { name: "Twitter", icon: FaXTwitter, link: process.env.NEXT_PUBLIC_TWITTER },
   {
     name: "Facebook",
     icon: FaFacebook,
@@ -35,13 +48,13 @@ const socialMedia = [
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-t from-blue-100 to-transparent">
+    <footer className="bg-gradient-to-t from-blue-200 to-transparent">
       <div className="mt-auto w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-5">
-          <div>
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-10">
+          <div className="col-span-full lg:col-span-1">
             <Link
-              className="flex items-center gap-2"
+              className="flex items-center gap-2 focus:outline-hidden focus:opacity-80"
               href="/"
               aria-label="Logo"
             >
@@ -52,48 +65,79 @@ const Footer = () => {
                 height={44}
                 alt={"Logo"}
               />
-              <span className="text-lg font-medium text-zinc-950 focus:outline-hidden dark:text-white">
+              <span className="text-lg font-medium text-zinc-950">
                 منصة مشرف
               </span>
             </Link>
           </div>
           {/* End Col */}
 
-          <ul className="text-center">
-            {items.map((item, i) => (
-              <li
-                key={i}
-                className="inline-block relative pe-8 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-3 before:-translate-y-1/2 before:content-['-'] before:text-gray-300 dark:before:text-neutral-600"
-              >
-                <Link
-                  className="inline-flex gap-x-2 text-sm text-gray-500 hover:text-gray-800 focus:outline-hidden focus:text-gray-800 dark:text-neutral-500 dark:hover:text-neutral-200 dark:focus:text-neutral-200 transition-colors duration-300"
-                  href={item.link || "#"}
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          {/* End Col */}
+          {footerLists.map((list, i) => (
+            <div key={i}>
+              <span className="text-xs font-semibold text-gray-900 uppercase dark:text-neutral-100">
+                {list.title}
+              </span>
 
-          {/* Social Brands */}
-          <div className="md:text-end space-x-2">
-            {socialMedia.map((item, i) => (
-              <Link
-                key={i}
-                className="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-300 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700 transition-colors duration-300"
-                href={item.link || "#"}
-                aria-label={item.name}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <item.icon className="shrink-0 size-4" />
-              </Link>
-            ))}
-          </div>
-          {/* End Social Brands */}
+              <ul className="mt-3 grid space-y-3 text-sm">
+                {list.items.map((item, i) => (
+                  <li key={i}>
+                    <Link
+                      className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-hidden focus:text-gray-800 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200 transition-colors duration-300"
+                      href={item.link}
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            // End Col
+          ))}
         </div>
         {/* End Grid */}
+
+        <div className="pt-5 mt-5 border-t border-gray-50/70 dark:border-neutral-700">
+          <div className="sm:flex sm:justify-between sm:items-center">
+            <div className="flex flex-wrap items-center gap-3">
+              <div className="flex flex-wrap justify-between items-center gap-2">
+                <span className="flex items-center gap-1 text-sm text-gray-700 dark:text-neutral-400">
+                  <FaCopyright />
+                  {new Date().getFullYear()}
+                  <span>
+                    <Link
+                      href="/"
+                      className="hover:text-main-blue transition-colors duration-300"
+                    >
+                      منصة مشرف
+                    </Link>
+                    .
+                  </span>
+                  جميع الحقوق محفوظة.
+                </span>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap justify-between items-center gap-3">
+              {/* Social Brands */}
+              <div className="space-x-4">
+                {socialMedia.map((item, i) => (
+                  <Link
+                    key={i}
+                    className="inline-block text-gray-500 hover:text-gray-800 focus:outline-hidden focus:text-gray-800 dark:text-neutral-500 dark:hover:text-neutral-200 dark:focus:text-neutral-200 transition-colors duration-300"
+                    href={item.link || "#"}
+                    aria-label={item.name}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <item.icon className="shrink-0 size-4" />
+                  </Link>
+                ))}
+              </div>
+              {/* End Social Brands */}
+            </div>
+            {/* End Col */}
+          </div>
+        </div>
       </div>
     </footer>
   );

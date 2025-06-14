@@ -105,12 +105,12 @@ export default function Page() {
                   className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white"
                 />
               </h1>
-              <div>
+              <span>
                 <TextGenerateEffect
                   words={words.description}
                   className="mt-1 text-gray-600 dark:text-neutral-400"
                 />
-              </div>
+              </span>
             </div>
           </div>
           {/* End Col */}
