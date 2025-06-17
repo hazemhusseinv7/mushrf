@@ -21,6 +21,8 @@ import {
   useMotionValueEvent,
 } from "motion/react";
 
+import { useTranslations } from "next-intl";
+
 import { cn } from "@/lib/utils";
 
 import { IconMenu2, IconX } from "@tabler/icons-react";
@@ -242,13 +244,17 @@ export const MobileNavToggle = ({
 };
 
 export const NavbarLogo = () => {
+  const t = useTranslations("Header");
+
   return (
     <Link
       href="/"
       className="relative z-20 ml-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
       <Image src="/logo/logo.svg" alt="Logo" width={30} height={30} priority />
-      <span className="font-medium text-black dark:text-white">منصة مشرف</span>
+      <span className="font-medium text-black dark:text-white">
+        {t("name")}
+      </span>
     </Link>
   );
 };
@@ -268,7 +274,7 @@ export const NavbarButton = ({
   onClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
 }) => {
   const baseStyles =
-    "px-4 py-2 rounded-md bg-white button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
+    "px-4 py-2 rounded-md button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
 
   const variantStyles = {
     primary:

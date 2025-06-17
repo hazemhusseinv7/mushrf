@@ -1,0 +1,266 @@
+{
+  "Metadata": {
+    "title": "Mushrf Platform",
+    "description": "Mushrf Platform is a comprehensive digital solution for project management and construction supervision activities, offering smart and advanced tools to enhance performance and accelerate project execution with high quality and efficiency."
+  },
+
+  "Header": {
+    "name": "Mushrf Platform",
+    "why-us": "Why Choose Us",
+    "features": "Features",
+    "how-it-works": "How It Works",
+    "contact-us": "Contact Us",
+    "chalnge-language": "Change Language"
+  },
+
+  "Hero": {
+    "title": "Mushrf Platform is the integrated digital solution for managing construction projects, technical supervision, and financial oversight of buildings. It provides an intelligent, advanced experience that enhances performance and accelerates project delivery with superior quality and efficiency.",
+    "name": "Mushrf Platform"
+  },
+
+  "WhyUs": {
+    "title": "Why Mushrf Platform?",
+    "description": "In today's rapidly evolving technological landscape, adopting digital solutions for construction management and supervision has become essential to achieve objectives with the highest standards. <name>Mushrf Platform</name> offers advanced tools that empower users to efficiently manage projects from planning through final delivery."
+  },
+
+  "Features": {
+    "title": "Mushrf Platform Features:",
+    "cards": {
+      "card_1": {
+        "title": "Digital Supervision & Monitoring",
+        "description": "Facilitates seamless communication between all project stakeholders, ensuring transparency and swift decision-making."
+      },
+      "card_2": {
+        "title": "Automated Documentation",
+        "description": "All processes and updates are digitally recorded for easy archiving and future reference."
+      },
+      "card_3": {
+        "title": "Precise Financial Management",
+        "description": "Enables cost tracking and expense monitoring to enhance financial control and maximize efficiency."
+      },
+      "card_4": {
+        "title": "Real-Time Reporting",
+        "description": "Generate technical and financial reports instantly for better analysis and informed decision-making."
+      },
+      "card_5": {
+        "title": "Stakeholder Integration",
+        "description": "Connects property owners, supervisors, and contractors to ensure workflow continuity according to schedule."
+      },
+      "card_6": {
+        "title": "Smart Notifications",
+        "description": "Receive instant alerts about project progress and critical updates."
+      },
+      "card_7": {
+        "title": "Contract & Document Management",
+        "description": "Digital system for storing contracts and documents with anytime access."
+      },
+      "card_8": {
+        "title": "Material Requests",
+        "description": "Track material supply and ensure timely availability."
+      },
+      "card_9": {
+        "title": "Security & Privacy",
+        "description": "Advanced technologies safeguard user data and ensure information confidentiality."
+      }
+    }
+  },
+
+  "HowItWorks": {
+    "title": "How Mushrf Platform Works",
+    "button": "Platform Overview",
+
+    "cards": {
+      "card_1": {
+        "title": "Project Registration:",
+        "description": "Owners or contractors input project details through the platform."
+      },
+      "card_2": {
+        "title": "Team & Role Assignment:",
+        "description": "Assign supervisors and engineers responsible for execution and monitoring."
+      },
+      "card_3": {
+        "title": "Continuous Updates:",
+        "description": "Document project phases step-by-step with full digital tracking."
+      },
+      "card_4": {
+        "title": "Report Generation:",
+        "description": "Extract high-accuracy financial and technical reports on demand."
+      },
+      "card_5": {
+        "title": "Effective Communication:",
+        "description": "Direct communication channels between all parties to ensure goal achievement."
+      }
+    }
+  },
+
+  "Footer": {
+    "name": "Mushrf Platform",
+
+    "lists": {
+      "list_1": {
+        "title": "Company",
+        "items": {
+          "item_1": "Why Choose Us",
+          "item_2": "Features",
+          "item_3": "How It Works",
+          "item_4": "Contact Us"
+        }
+      },
+      "list_2": {
+        "title": "Legal",
+        "items": {
+          "item_1": "Terms & Conditions",
+          "item_2": "Privacy Policy",
+          "item_3": "FAQs"
+        }
+      }
+    },
+
+    "copyright": "© <name>Mushrf Platform</name> All rights reserved."
+  },
+
+  "ContactUs": {
+    "title": "We Value Your Feedback",
+    "description": "Your feedback is invaluable as we continuously strive to provide the best experience. Share suggestions or concerns through our communication channels.",
+
+    "cards": {
+      "title": "Contact Channels",
+      "card_1": {
+        "title": "Email",
+        "description": "Reach us at:"
+      },
+      "card_2": {
+        "title": "Phone",
+        "description": "Or call us at:"
+      },
+      "card_3": {
+        "title": "FAQs",
+        "description": "Clear, quick answers to common visitor inquiries."
+      }
+    }
+  },
+
+  "TermsAndConditions": {
+    "title": "Terms & Conditions",
+    "description": "Welcome to Mushrf Platform - the integrated digital solution for construction contracting, technical and financial supervision, providing a smart environment for efficient, transparent project management. By using our platform, you explicitly agree to these Terms, which ensure a secure, reliable experience for all users while protecting all parties' rights.",
+
+    "accordion": {
+      "item_1": {
+        "title": "Service Scope & Usage",
+        "description": "Mushrf Platform offers digital services including: project management, performance tracking, document archiving, contract organization, budget management, and technical monitoring scheduling. These services may only be used for legal, professional purposes. Any unlawful use violating Saudi Arabian regulations or user's local laws is prohibited.\nYou acknowledge legal responsibility for all activities under your account and agree not to upload inappropriate, harmful, misleading, or rights-infringing content."
+      },
+      "item_2": {
+        "title": "Registration & Accounts",
+        "description": "Certain features require accurate registration data (full name, email, phone, organization). Users are responsible for protecting login credentials.\nMushrf reserves the right to suspend accounts violating these Terms or showing security breaches."
+      },
+      "item_3": {
+        "title": "Content & Intellectual Property",
+        "description": "All copyrights, designs, software interfaces, logos, and platform-generated data are Mushrf's exclusive property. Automated data collection tools are prohibited.\nUsers retain IP rights to their uploaded content but grant Mushrf a non-exclusive license for operational use."
+      },
+      "item_4": {
+        "title": "Liability Limitations",
+        "description": "Mushrf isn't liable for direct/indirect losses from user misuse or reliance on inaccurate data. Platform availability isn't guaranteed during maintenance.\nWhile we deliver optimal technical performance, final project outcomes remain the executing party's responsibility."
+      },
+      "item_5": {
+        "title": "Updates & Modifications",
+        "description": "We may modify these Terms anytime, notifying users via email or platform notifications. Continued use constitutes acceptance."
+      },
+      "item_6": {
+        "title": "Termination",
+        "description": "Users may terminate accounts anytime. Mushrf reserves the right to terminate accounts violating usage policies or posing security/legal risks."
+      }
+    }
+  },
+
+  "PrivacyPolicy": {
+    "title": "Privacy Policy",
+    "description": "At Mushrf Platform, we prioritize your privacy. We're committed to protecting your personal information and ensuring its transparent, secure use. This policy explains our data collection, purpose, and protection measures.",
+
+    "accordion": {
+      "item_1": {
+        "title": "Collected Information",
+        "description": "We collect registration/usage data (name, phone, email, organization, location). Technical data (device type, IP, browser) is automatically gathered.\nProject-related information may include client names, contract details, schedules, sites, and field photos."
+      },
+      "item_2": {
+        "title": "Information Use",
+        "description": "We use this data to:\n• Enable efficient project management\n• Send project update alerts\n• Improve service quality through usage analysis\n• Respond to inquiries and provide support"
+      },
+      "item_3": {
+        "title": "Data Protection",
+        "description": "Mushrf employs top-tier digital security standards with strong encryption for communications/databases. Internal data access is strictly controlled; no employee/third-party may view your data without legitimate reason and official consent."
+      },
+      "item_4": {
+        "title": "Third-Party Sharing",
+        "description": "We don't share user data externally except:\n• With explicit user consent\n• When legally required by authorities\n• With technical support providers bound by confidentiality agreements"
+      },
+      "item_5": {
+        "title": "Data Retention",
+        "description": "We retain user data while accounts are active or until deletion requests. Some information may be kept post-termination for legal/regulatory purposes."
+      },
+      "item_6": {
+        "title": "User Rights",
+        "description": "Users may access, modify, or delete their data anytime, or request digital copies by contacting support."
+      },
+      "item_7": {
+        "title": "Cookies",
+        "description": "Mushrf uses cookies to personalize user experience. Browser settings may disable cookies, though some features may be affected."
+      }
+    }
+  },
+
+  "FAQ": {
+    "title": "Frequently Asked Questions",
+    "description": "Clear, quick answers to common inquiries, simplifying your experience and addressing your questions.",
+
+    "accordion": {
+      "item_1": {
+        "title": "What is Mushrf Platform?",
+        "description": "An intelligent digital platform enabling individuals and companies in contracting/technical supervision to manage projects, track work, site visits, and financial statements seamlessly from one secure location."
+      },
+      "item_2": {
+        "title": "Is the platform only for companies?",
+        "description": "No, it serves individuals, consultancies, and companies alike, designed for various sectors and scales."
+      },
+      "item_3": {
+        "title": "Can I use the platform offline?",
+        "description": "No, Mushrf requires constant internet for data syncing and update preservation."
+      },
+      "item_4": {
+        "title": "Does the platform provide detailed project reports?",
+        "description": "Yes, it offers smart reports including performance analytics, cost reports, progress reports, and technical visit documentation."
+      },
+      "item_5": {
+        "title": "How do I add my team?",
+        "description": "Invite members via email from your dashboard, assigning role-based permissions per their project responsibilities."
+      },
+      "item_6": {
+        "title": "Are there mobile apps?",
+        "description": "Yes, we're launching mobile apps (Android/iOS) for project management anytime, anywhere."
+      },
+      "item_7": {
+        "title": "How do I contact support?",
+        "description": "Contact us directly at: 0571506060 or info@mushrf.com"
+      },
+      "item_8": {
+        "title": "Is the platform secure?",
+        "description": "Absolutely. We implement strict security protocols, daily backups, and comply with all local/international data protection standards."
+      },
+      "item_9": {
+        "title": "Can the platform be customized?",
+        "description": "Yes, we offer tailored solutions including customized reports, forms, and permissions."
+      },
+      "item_10": {
+        "title": "Can I export platform data?",
+        "description": "Yes, many reports/information can be exported in formats like PDF and Excel."
+      },
+      "item_11": {
+        "title": "Is English supported?",
+        "description": "Yes, the platform is available in Arabic and English, switchable via account settings."
+      },
+      "item_12": {
+        "title": "Does the platform support API integration?",
+        "description": "Yes, APIs are available for integration with major enterprise systems."
+      }
+    }
+  }
+}

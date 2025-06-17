@@ -4,9 +4,13 @@ import { useRef } from "react";
 
 import { useScroll, useTransform } from "motion/react";
 
+import { useTranslations } from "next-intl";
+
 import { GoogleGeminiEffect } from "@/components/ui/google-gemini-effect";
 
 const HowItWorks = () => {
+  const t = useTranslations("HowItWorks");
+
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -33,7 +37,7 @@ const HowItWorks = () => {
             pathLengthFourth,
             pathLengthFifth,
           ]}
-          title="كيف تعمل منصة مشرف؟"
+          title={t("title")}
         />
       </div>
     </section>

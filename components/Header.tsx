@@ -16,23 +16,29 @@ import {
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
 
-const items = [
-  {
-    name: "لماذا نحن",
-    link: "/#why-us",
-  },
-  {
-    name: "المميزات",
-    link: "/#features",
-  },
-  {
-    name: "كيف تعمل المنصة",
-    link: "/#how-it-works",
-  },
-];
+import ChangeLang from "./ChangeLang";
+
+import { useTranslations } from "next-intl";
 
 const Header = () => {
+  const t = useTranslations("Header");
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const items = [
+    {
+      name: t("why-us"),
+      link: "/#why-us",
+    },
+    {
+      name: t("features"),
+      link: "/#features",
+    },
+    {
+      name: t("how-it-works"),
+      link: "/#how-it-works",
+    },
+  ];
 
   return (
     <div className="relative w-full">
@@ -43,8 +49,10 @@ const Header = () => {
           <NavItems items={items} />
           <div className="flex items-center gap-4">
             <NavbarButton variant="primary" href="/contact-us">
-              تواصل معنا
+              {t("contact-us")}
             </NavbarButton>
+
+            <ChangeLang />
           </div>
         </NavBody>
 
@@ -79,8 +87,10 @@ const Header = () => {
                 className="w-full"
                 href="/contact-us"
               >
-                تواصل معنا
+                {t("contact-us")}
               </NavbarButton>
+
+              <ChangeLang />
             </div>
           </MobileNavMenu>
         </MobileNav>

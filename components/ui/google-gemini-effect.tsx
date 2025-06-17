@@ -12,6 +12,8 @@ import {
   useDisclosure,
 } from "@heroui/react";
 
+import { useTranslations } from "next-intl";
+
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { MultiStepLoader as Loader } from "./multi-step-loader";
 
@@ -19,34 +21,6 @@ import { cn } from "@/lib/utils";
 
 import { IconX } from "@tabler/icons-react";
 
-const words = "كيف تعمل منصة مشرف؟";
-
-const loadingStates = [
-  {
-    title: "تسجيل المشروع:",
-    description:
-      "يقوم المالك أو المقاول بإدخال بيانات المشروع وتفاصيله عبر المنصة.",
-  },
-  {
-    title: "إضافة الفرق والأدوار:",
-    description:
-      "يتم تحديد المشرفين والمهندسين المسؤولين عن التنفيذ والمتابعة.",
-  },
-  {
-    title: "تحديث مستمر:",
-    description:
-      "يتم تسجيل مراحل المشروع خطوة بخطوة مع توثيق كافة العمليات إلكترونيًا.",
-  },
-  {
-    title: "إصدار التقارير:",
-    description: "يمكن استخراج التقارير المالية والفنية بدقة عالية عند الحاجة.",
-  },
-  {
-    title: "التواصل الفعّال:",
-    description:
-      "تتيح المنصة قنوات اتصال مباشرة بين جميع الأطراف لضمان تحقيق الأهداف.",
-  },
-];
 const transition = {
   duration: 0,
   ease: "linear" as const,
@@ -63,9 +37,36 @@ export const GoogleGeminiEffect = ({
   description?: string;
   className?: string;
 }) => {
+  const t = useTranslations("HowItWorks");
+
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const [loading, setLoading] = useState(false);
+
+  const words = t("title");
+
+  const loadingStates = [
+    {
+      title: t("cards.card_1.title"),
+      description: t("cards.card_1.description"),
+    },
+    {
+      title: t("cards.card_2.title"),
+      description: t("cards.card_2.description"),
+    },
+    {
+      title: t("cards.card_3.title"),
+      description: t("cards.card_3.description"),
+    },
+    {
+      title: t("cards.card_4.title"),
+      description: t("cards.card_4.description"),
+    },
+    {
+      title: t("cards.card_5.title"),
+      description: t("cards.card_5.description"),
+    },
+  ];
 
   return (
     <div className={cn("sticky top-80", className)}>
@@ -88,7 +89,7 @@ export const GoogleGeminiEffect = ({
           className="relative mt-8 md:mt-32 z-50"
           variant="shadow"
         >
-          كيف تعمل المنصة
+          {t("button")}
         </Button>
         <Modal size="full" isOpen={isOpen} onOpenChange={onOpenChange}>
           <ModalContent>

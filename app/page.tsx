@@ -1,15 +1,6 @@
-import Hero from "@/components/Hero";
-import WhyUs from "@/components/WhyUs";
-import Features from "@/components/Features";
-import HowItWorks from "@/components/HowItWorks";
+import { redirect } from "next/navigation";
 
-export default function Home() {
-  return (
-    <>
-      <Hero />
-      <WhyUs />
-      <Features />
-      <HowItWorks />
-    </>
-  );
+// This page only renders when the app is built statically (output: 'export')
+export default function RootPage() {
+  redirect("/en");
 }

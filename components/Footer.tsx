@@ -1,38 +1,21 @@
 import Link from "next/link";
 import Image from "next/image";
 
+import { getTranslations } from "next-intl/server";
+
 import {
-  FaFacebook,
-  FaInstagram,
   FaWhatsapp,
+  FaInstagram,
+  FaFacebook,
+  FaYoutube,
   FaCopyright,
 } from "react-icons/fa6";
 
-const footerLists = [
-  {
-    title: "الشركة",
-    items: [
-      { name: "لماذا نحن", link: "/#why-us" },
-      { name: "المميزات", link: "/#features" },
-      { name: "كيف تعمل المنصة", link: "/#how-it-works" },
-      { name: "تواصل معنا", link: "/contact-us" },
-    ],
-  },
-  {
-    title: "القوانين",
-    items: [
-      { name: "الشروط والأحكام", link: "/terms-and-conditions" },
-      { name: "سياسة الخصوصية", link: "/privacy-policy" },
-      { name: "الأسئلة الشائعة", link: "/frequently-asked-questions" },
-    ],
-  },
-];
-
 const socialMedia = [
   {
-    name: "Facebook",
-    icon: FaFacebook,
-    link: process.env.NEXT_PUBLIC_FACEBOOK,
+    name: "Whatsapp",
+    icon: FaWhatsapp,
+    link: process.env.NEXT_PUBLIC_WHATSAPP,
   },
   {
     name: "Instagram",
@@ -40,13 +23,43 @@ const socialMedia = [
     link: process.env.NEXT_PUBLIC_INSTAGRAM,
   },
   {
-    name: "Whatsapp",
-    icon: FaWhatsapp,
-    link: process.env.NEXT_PUBLIC_WHATSAPP,
+    name: "Facebook",
+    icon: FaFacebook,
+    link: process.env.NEXT_PUBLIC_FACEBOOK,
+  },
+  {
+    name: "Youtube",
+    icon: FaYoutube,
+    link: process.env.NEXT_PUBLIC_YOUTUBE,
   },
 ];
 
-const Footer = () => {
+const Footer = async () => {
+  const t = await getTranslations("Footer");
+
+  const footerLists = [
+    {
+      title: t("lists.list_1.title"),
+      items: [
+        { name: t("lists.list_1.items.item_1"), link: "/#why-us" },
+        { name: t("lists.list_1.items.item_2"), link: "/#features" },
+        { name: t("lists.list_1.items.item_3"), link: "/#how-it-works" },
+        { name: t("lists.list_1.items.item_4"), link: "/contact-us" },
+      ],
+    },
+    {
+      title: t("lists.list_2.title"),
+      items: [
+        { name: t("lists.list_2.items.item_1"), link: "/terms-and-conditions" },
+        { name: t("lists.list_2.items.item_2"), link: "/privacy-policy" },
+        {
+          name: t("lists.list_2.items.item_3"),
+          link: "/frequently-asked-questions",
+        },
+      ],
+    },
+  ];
+
   return (
     <footer className="bg-gradient-to-t from-blue-200 to-transparent">
       <div className="mt-auto w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
@@ -66,7 +79,7 @@ const Footer = () => {
                 alt={"Logo"}
               />
               <span className="text-lg font-medium text-zinc-950">
-                منصة مشرف
+                {t("name")}
               </span>
             </Link>
           </div>
@@ -97,27 +110,8 @@ const Footer = () => {
         {/* End Grid */}
 
         <div className="pt-5 mt-5 border-t border-gray-50/70 dark:border-neutral-700">
-          <div className="sm:flex sm:justify-between sm:items-center">
-            <div className="flex flex-wrap items-center gap-3">
-              <div className="flex flex-wrap justify-between items-center gap-2">
-                <span className="flex items-center gap-1 text-sm text-gray-700 dark:text-neutral-400">
-                  <FaCopyright />
-                  {new Date().getFullYear()}
-                  <span>
-                    <Link
-                      href="/"
-                      className="hover:text-main-blue transition-colors duration-300"
-                    >
-                      منصة مشرف
-                    </Link>
-                    .
-                  </span>
-                  جميع الحقوق محفوظة.
-                </span>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap justify-between items-center gap-3">
+          <div className="sm:flex sm:justify-between sm:items-center space-y-2">
+            <div className="sm:order-2 flex flex-wrap justify-between items-center gap-3">
               {/* Social Brands */}
               <div className="space-x-4">
                 {socialMedia.map((item, i) => (
@@ -129,11 +123,33 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <item.icon className="shrink-0 size-4" />
+                    <item.icon className="shrink-0 size-4.5 lg:size-4" />
                   </Link>
                 ))}
               </div>
               {/* End Social Brands */}
+            </div>
+
+            <div className="sm:order-1 flex flex-wrap items-center gap-3">
+              <div className="flex flex-wrap justify-between items-center gap-2">
+                <span className="flex items-center gap-1 text-sm text-gray-700 dark:text-neutral-400">
+                  <FaCopyright className="text-gray-700 dark:text-neutral-400" />
+                  {new Date().getFullYear()}
+                  {t.rich("copyright", {
+                    name: (chunks) => (
+                      <span>
+                        <Link
+                          href="/"
+                          className="hover:text-main-blue transition-colors duration-300"
+                        >
+                          {chunks}
+                        </Link>
+                        .
+                      </span>
+                    ),
+                  })}
+                </span>
+              </div>
             </div>
             {/* End Col */}
           </div>

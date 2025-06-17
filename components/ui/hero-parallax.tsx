@@ -15,7 +15,7 @@ import {
   MotionValue,
 } from "motion/react";
 
-const words = "لماذا منصة مشرف؟";
+import { useTranslations } from "next-intl";
 
 export const HeroParallax = ({ images }: { images: string[] }) => {
   const firstRow = images.slice(0, 5);
@@ -92,6 +92,10 @@ export const HeroParallax = ({ images }: { images: string[] }) => {
 };
 
 export const Header = () => {
+  const t = useTranslations("WhyUs");
+
+  const words = t("title");
+
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
       <h2>
@@ -101,18 +105,17 @@ export const Header = () => {
         />
       </h2>
       <span className="block max-w-4xl mt-8 text-base md:text-xl dark:text-neutral-200">
-        في ظل التطور التكنولوجي المتسارع، أصبح من الضروري الاعتماد على حلول
-        رقمية تسهّل عمليات البناء والإشراف وتضمن تحقيق الأهداف بأعلى المعايير.
-        تقدم{" "}
-        <PointerHighlight
-          rectangleClassName="bg-blue-100 dark:bg-blue-900 border-blue-300 dark:border-blue-700 leading-loose"
-          pointerClassName="text-blue-500 h-3 w-3"
-          containerClassName="inline-block mx-1"
-        >
-          <span className="relative z-10">منصة مشرف</span>
-        </PointerHighlight>{" "}
-        أدوات متقدمة تُمكّن المستخدمين من إدارة مشاريعهم بكفاءة، بدءًا من
-        التخطيط وحتى التسليم النهائي.
+        {t.rich("description", {
+          name: (chunks) => (
+            <PointerHighlight
+              rectangleClassName="bg-blue-100 dark:bg-blue-900 border-blue-300 dark:border-blue-700 leading-loose"
+              pointerClassName="text-blue-500 h-3 w-3"
+              containerClassName="inline-block mx-1"
+            >
+              <span className="relative z-10">{chunks}</span>
+            </PointerHighlight>
+          ),
+        })}
       </span>
     </div>
   );

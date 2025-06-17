@@ -2,14 +2,17 @@
 
 import Image from "next/image";
 
+import { useTranslations } from "next-intl";
+
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
-const words =
-  "منصة مشرف هي الحل الرقمي المتكامل لإدارة المشاريع والأنشطة المتعلقة بالمقاولات والإشراف الفني والمالي للمباني، حيث توفر تجربة ذكية ومتطورة تساهم في تحسين الأداء وتسريع تنفيذ المشاريع بجودة وكفاءة عالية";
-
 const Hero = () => {
+  const t = useTranslations("Hero");
+
+  const words = t("title");
+
   return (
     <section className="relative bg-linear-to-bl from-blue-300/70 via-transparent dark:from-blue-950 dark:via-transparent">
       <div className="flex flex-col overflow-hidden">
@@ -23,7 +26,7 @@ const Hero = () => {
                 />
               </h1>
               <span className="text-4xl md:text-[6rem] font-bold text-zinc-950 mt-1 leading-none -mb-20">
-                منصة مشرف
+                {t("name")}
               </span>
             </>
           }
