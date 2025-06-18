@@ -23,6 +23,7 @@ import {
   IconArrowNarrowRight,
   IconX,
 } from "@tabler/icons-react";
+import { Button } from "@heroui/react";
 
 interface CarouselProps {
   items: JSX.Element[];
@@ -140,22 +141,26 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
           </div>
         </div>
         <div className="mr-10 flex justify-end gap-2">
-          <button
-            className="relative z-40 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 disabled:opacity-50 transition-colors duration-200"
-            onClick={scrollLeft}
+          <Button
+            className={`relative z-40 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 disabled:opacity-50 !transition-all duration-100 ${
+              !canScrollLeft ? "min-w-0 px-0" : ""
+            }`}
+            onPress={scrollLeft}
             disabled={!canScrollLeft}
             aria-label="Previous"
           >
             <IconArrowNarrowLeft className="size-5 text-gray-500" />
-          </button>
-          <button
-            className="relative z-40 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 disabled:opacity-50 transition-colors duration-200"
-            onClick={scrollRight}
+          </Button>
+          <Button
+            className={`relative z-40 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 disabled:opacity-50 !transition-all duration-100 ${
+              !canScrollRight ? "min-w-0 px-0" : ""
+            }`}
+            onPress={scrollRight}
             disabled={!canScrollRight}
             aria-label="Next"
           >
             <IconArrowNarrowRight className="size-5 text-gray-500" />
-          </button>
+          </Button>
         </div>
       </div>
     </CarouselContext.Provider>
@@ -220,7 +225,7 @@ export const Card = ({
               exit={{ opacity: 0 }}
               ref={containerRef}
               layoutId={layout ? `card-${card.title}` : undefined}
-              className="relative z-[60] mx-auto my-10 h-fit max-w-5xl rounded-3xl bg-white p-4 font-sans md:p-10 dark:bg-neutral-900"
+              className="relative z-[60] mx-auto my-10 h-fit max-w-5xl rounded-3xl bg-white p-4 md:p-10 dark:bg-neutral-900"
             >
               <button
                 className="sticky top-4 right-0 ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-black dark:bg-white"
@@ -242,7 +247,7 @@ export const Card = ({
               </motion.p>
               <div className="py-10">
                 <div className="bg-[#F5F5F7] px-8 pt-8 md:px-14 md:pt-14 rounded-3xl mb-4">
-                  <div className="text-neutral-600 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+                  <div className="text-neutral-600 text-base md:text-2xl max-w-3xl mx-auto">
                     <span>{card.description}</span>
                   </div>
                   {card.src && (
@@ -270,13 +275,13 @@ export const Card = ({
         <div className="relative z-40 p-8">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
-            className="text-left font-sans text-sm font-medium text-white md:text-base"
+            className="text-left text-sm font-medium text-white md:text-base"
           >
             {card.category}
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className="mt-2 max-w-xs text-left font-sans text-xl font-semibold [text-wrap:balance] text-white md:text-3xl"
+            className="mt-2 max-w-xs text-left text-xl font-semibold [text-wrap:balance] text-white md:text-3xl"
           >
             {card.title}
           </motion.p>

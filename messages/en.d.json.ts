@@ -69,7 +69,7 @@ declare const messages: {
   },
 
   "HowItWorks": {
-    "title": "How Mushrf Platform Works",
+    "title": "How Mushrf Platform Works?",
     "button": "Platform Overview",
 
     "cards": {

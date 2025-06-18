@@ -51,7 +51,12 @@ export default async function RootLayout({ children, params }: Props) {
   const direction = locale === "en" ? "ltr" : "rtl";
 
   return (
-    <html lang={locale} dir={direction} className="scroll-smooth">
+    <html
+      lang={locale}
+      dir={direction}
+      className="scroll-smooth"
+      suppressHydrationWarning
+    >
       <body
         className={`${ibmPlexSansArabic.variable} font-ibm-plex-sans-arabic antialiased`}
       >

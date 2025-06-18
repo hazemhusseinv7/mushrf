@@ -61,8 +61,8 @@ const Features = async () => {
   ));
   return (
     <section id="features" dir="ltr">
-      <div className="w-full h-full py-20">
-        <h2 className="max-w-7xl pl-4 mx-auto" dir="rtl">
+      <div className="w-full h-full py-40">
+        <h2 className="max-w-7xl ps-4 mx-auto" dir="rtl">
           <TextGenerateEffect
             words={words}
             className="text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200"

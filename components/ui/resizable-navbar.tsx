@@ -84,7 +84,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
   return (
     <motion.div
       ref={ref}
-      className={cn("fixed inset-x-0 top-2 lg:top-4 z-40 w-full", className)}
+      className={cn("fixed inset-x-0 top-2 lg:top-4 z-50 w-full", className)}
     >
       {Children.map(children, (child) =>
         isValidElement(child)
@@ -114,7 +114,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         damping: 50,
       }}
       style={{
-        minWidth: "800px",
+        minWidth: "900px",
       }}
       className={cn(
         "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-2 lg:flex dark:bg-transparent",

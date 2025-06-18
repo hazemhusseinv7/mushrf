@@ -1,21 +1,21 @@
 import { HeroParallax } from "@/components/ui/hero-parallax";
 
 export const images = [
-  "/why-us/image-1.png",
-  "/why-us/image-2.png",
-  "/why-us/image-3.png",
-  "/why-us/image-4.png",
-  "/why-us/image-5.png",
-  "/why-us/image-6.png",
-  "/why-us/image-7.png",
-  "/why-us/image-8.png",
-  "/why-us/image-9.png",
-  "/why-us/image-10.png",
-  "/why-us/image-11.png",
-  "/why-us/image-12.png",
-  "/why-us/image-13.png",
-  "/why-us/image-14.png",
-  "/why-us/image-15.png",
+  "/preview/image-1.png",
+  "/preview/image-2.png",
+  "/preview/image-3.png",
+  "/preview/image-4.png",
+  "/preview/image-5.png",
+  "/preview/image-6.png",
+  "/preview/image-7.png",
+  "/preview/image-8.png",
+  "/preview/image-9.png",
+  "/preview/image-10.png",
+  "/preview/image-11.png",
+  "/preview/image-12.png",
+  "/preview/image-13.png",
+  "/preview/image-14.png",
+  "/preview/image-15.png",
 ];
 
 const WhyUs = () => {

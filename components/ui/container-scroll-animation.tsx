@@ -8,7 +8,7 @@ export const ContainerScroll = ({
   titleComponent,
   children,
 }: {
-  titleComponent: string | ReactNode;
+  titleComponent?: string | ReactNode;
   children: ReactNode;
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -38,11 +38,11 @@ export const ContainerScroll = ({
 
   return (
     <div
-      className="flex items-center justify-center relative p-2 md:p-20"
+      className="flex items-center justify-center relative py-20"
       ref={containerRef}
     >
       <div
-        className="py-10 md:py-40 mt-32 lg:-mt-8 w-full relative"
+        className="w-full relative"
         style={{
           perspective: "1000px",
         }}
@@ -61,7 +61,7 @@ export const Header = ({
   titleComponent,
 }: {
   translate: MotionValue<number>;
-  titleComponent: string | ReactNode;
+  titleComponent?: string | ReactNode;
 }) => {
   return (
     <motion.div
@@ -95,7 +95,7 @@ export const Card = ({
       }}
       className="-mt-8 mx-auto w-fit h-auto border-4 border-[#6C6C6C] p-2 md:p-6 bg-[#222222] rounded-[30px] shadow-2xl"
     >
-      <div className="h-full w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-zinc-900 md:rounded-2xl  ">
+      <div className="h-full w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-zinc-900 md:rounded-2xl">
         {children}
       </div>
     </motion.div>

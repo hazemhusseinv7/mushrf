@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import WhyUs from "@/components/WhyUs";
 import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
+import ScrollTopTop from "@/components/ScrollTopTop";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <WhyUs />
       <Features />
       <HowItWorks />
+      <ScrollTopTop />
     </>
   );
 }

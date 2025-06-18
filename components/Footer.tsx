@@ -61,7 +61,7 @@ const Footer = async () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-t from-blue-200 to-transparent">
+    <footer className="bg-gradient-to-t from-blue-200 to-transparent dark:from-main-blue/20 dark:to-transparent">
       <div className="mt-auto w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
         {/* Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-10">
@@ -109,7 +109,7 @@ const Footer = async () => {
         </div>
         {/* End Grid */}
 
-        <div className="pt-5 mt-5 border-t border-gray-50/70 dark:border-neutral-700">
+        <div className="pt-5 mt-5 border-t border-gray-50/70 dark:border-neutral-800">
           <div className="sm:flex sm:justify-between sm:items-center space-y-2">
             <div className="sm:order-2 flex flex-wrap justify-between items-center gap-3">
               {/* Social Brands */}

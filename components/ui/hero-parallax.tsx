@@ -66,13 +66,14 @@ export const HeroParallax = ({ images }: { images: string[] }) => {
           translateY,
           opacity,
         }}
+        dir="ltr"
       >
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
+        <motion.div className="flex flex-row-reverse gap-x-10 md:gap-x-20 mb-20">
           {firstRow.map((image) => (
             <PreviewCard image={image} translate={translateX} key={image} />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row  mb-20 space-x-20">
+        <motion.div className="flex flex-row mb-20 gap-x-10 md:gap-x-20">
           {secondRow.map((image) => (
             <PreviewCard
               image={image}
@@ -81,7 +82,7 @@ export const HeroParallax = ({ images }: { images: string[] }) => {
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
+        <motion.div className="flex flex-row-reverse gap-x-10 md:gap-x-20">
           {thirdRow.map((image) => (
             <PreviewCard image={image} translate={translateX} key={image} />
           ))}

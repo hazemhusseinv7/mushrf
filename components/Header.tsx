@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/resizable-navbar";
 
 import ChangeLang from "./ChangeLang";
+import ChangeTheme from "./ChangeTheme";
 
 import { useTranslations } from "next-intl";
 
@@ -53,6 +54,7 @@ const Header = () => {
             </NavbarButton>
 
             <ChangeLang />
+            <ChangeTheme />
           </div>
         </NavBody>
 
@@ -91,6 +93,7 @@ const Header = () => {
               </NavbarButton>
 
               <ChangeLang />
+              <ChangeTheme />
             </div>
           </MobileNavMenu>
         </MobileNav>
