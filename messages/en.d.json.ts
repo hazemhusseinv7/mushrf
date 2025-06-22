@@ -119,7 +119,12 @@ declare const messages: {
       }
     },
 
-    "copyright": "© <name>Mushrf Platform</name> All rights reserved."
+    "qr_code": {
+      "play_store": "Play store",
+      "app_store": "App store"
+    },
+
+    "copyright": "<name>Mushrf Platform</name> All rights reserved."
   },
 
   "ContactUs": {

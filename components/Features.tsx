@@ -60,9 +60,9 @@ const Features = async () => {
     <Card key={card.src} card={card} index={index} layout={true} />
   ));
   return (
-    <section id="features" dir="ltr">
+    <section id="features">
       <div className="w-full h-full py-40">
-        <h2 className="max-w-7xl ps-4 mx-auto" dir="rtl">
+        <h2 className="max-w-7xl ps-4 mx-auto">
           <TextGenerateEffect
             words={words}
             className="text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200"

@@ -6,8 +6,6 @@ import { usePathname, useRouter } from "@/i18n/navigation";
 
 import { Button } from "@heroui/react";
 
-import { FaEarthAfrica } from "react-icons/fa6";
-
 const ChangeLang = () => {
   const t = useTranslations("Header");
 
@@ -37,7 +35,7 @@ const ChangeLang = () => {
       onPress={handleClick}
       disabled={pending}
     >
-      <FaEarthAfrica className="size-4 text-zinc-900" />
+      <span className="text-zinc-900">{locale === "en" ? "AR" : "EN"}</span>
     </Button>
   );
 };

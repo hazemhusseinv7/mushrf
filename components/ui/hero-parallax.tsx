@@ -4,9 +4,6 @@ import Image from "next/image";
 
 import React from "react";
 
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import { PointerHighlight } from "@/components/ui/pointer-highlight";
-
 import {
   motion,
   useScroll,
@@ -16,6 +13,11 @@ import {
 } from "motion/react";
 
 import { useTranslations } from "next-intl";
+
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { PointerHighlight } from "@/components/ui/pointer-highlight";
+
+import FullScreenPreview from "@/components/FullScreenPreview";
 
 export const HeroParallax = ({ images }: { images: string[] }) => {
   const firstRow = images.slice(0, 5);
@@ -56,7 +58,7 @@ export const HeroParallax = ({ images }: { images: string[] }) => {
   return (
     <div
       ref={ref}
-      className="py-40 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -96,9 +98,25 @@ export const Header = () => {
   const t = useTranslations("WhyUs");
 
   const words = t("title");
+  const youtubeVideoUrl = process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_URL;
+  const isValidYoutubeUrl = youtubeVideoUrl?.startsWith(
+    "https://www.youtube.com/"
+  );
 
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
+    <div className="max-w-7xl relative mx-auto px-4 w-full left-0 top-0 z-50">
+      {isValidYoutubeUrl && (
+        <iframe
+          className="max-w-5xl w-full aspect-video mx-auto mb-40"
+          src={youtubeVideoUrl}
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+          loading="lazy"
+        />
+      )}
+
       <h2>
         <TextGenerateEffect
           words={words}
@@ -140,14 +158,16 @@ export const PreviewCard = ({
       key={image}
       className="group/card w-[200px] h-[434px] md:w-[300px] md:h-[650px] lg:w-[375px] lg:h-[812px] relative shrink-0"
     >
-      <div className="block group-hover/card:shadow-2xl ">
-        <Image
-          src={image}
-          fill
-          sizes="(max-width: 768px) 200px, (max-width: 1024px) 300px, 375px"
-          className="object-cover object-left-top absolute h-full w-full inset-0"
-          alt="App preview"
-        />
+      <div className="block group-hover/card:shadow-2xl">
+        <FullScreenPreview src={image} alt="App preview">
+          <Image
+            src={image}
+            fill
+            sizes="(max-width: 768px) 200px, (max-width: 1024px) 300px, 375px"
+            className="object-cover object-left-top absolute h-full w-full inset-0"
+            alt="App preview"
+          />
+        </FullScreenPreview>
       </div>
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/card:opacity-80 bg-zinc-700 pointer-events-none" />
     </motion.div>

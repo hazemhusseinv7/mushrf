@@ -9,7 +9,9 @@ import {
   FaFacebook,
   FaYoutube,
   FaCopyright,
+  FaAppStoreIos,
 } from "react-icons/fa6";
+import { BiLogoPlayStore } from "react-icons/bi";
 
 const socialMedia = [
   {
@@ -60,6 +62,19 @@ const Footer = async () => {
     },
   ];
 
+  const qrCodes = [
+    {
+      title: t("qr_code.play_store"),
+      icon: BiLogoPlayStore,
+      image: "/qr-codes/play-store.svg",
+    },
+    {
+      title: t("qr_code.app_store"),
+      icon: FaAppStoreIos,
+      image: "/qr-codes/app-store.svg",
+    },
+  ];
+
   return (
     <footer className="bg-gradient-to-t from-blue-200 to-transparent dark:from-main-blue/20 dark:to-transparent">
       <div className="mt-auto w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
@@ -87,7 +102,7 @@ const Footer = async () => {
 
           {footerLists.map((list, i) => (
             <div key={i}>
-              <span className="text-xs font-semibold text-gray-900 uppercase dark:text-neutral-100">
+              <span className="text-sm font-semibold text-gray-900 uppercase dark:text-neutral-100">
                 {list.title}
               </span>
 
@@ -103,6 +118,28 @@ const Footer = async () => {
                   </li>
                 ))}
               </ul>
+            </div>
+            // End Col
+          ))}
+
+          {qrCodes.map((ar_code, i) => (
+            <div key={i}>
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-semibold text-gray-900 uppercase dark:text-neutral-100">
+                  {ar_code.title}
+                </span>
+                <ar_code.icon />
+              </div>
+
+              {ar_code.image && (
+                <Image
+                  className="size-[100px] mt-3"
+                  src={ar_code.image}
+                  width={100}
+                  height={100}
+                  alt="App QR Code"
+                />
+              )}
             </div>
             // End Col
           ))}

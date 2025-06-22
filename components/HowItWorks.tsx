@@ -36,7 +36,7 @@ const HowItWorks = () => {
   ];
   return (
     <section id="how-it-works">
-      <div className="relative w-full overflow-clip">
+      <div className="relative w-full overflow-clip bg-green-400">
         <Timeline data={data} />
       </div>
     </section>

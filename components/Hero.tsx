@@ -3,8 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { ScrollParallax } from "react-just-parallax";
-
 import { useTranslations } from "next-intl";
 
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
@@ -71,57 +69,8 @@ const Hero = () => {
               </span>
             </>
           }
-        >
-          <Image
-            src={`/preview/image-1.png`}
-            alt="App preview"
-            height={812}
-            width={375}
-            className="mx-auto rounded-2xl size-full"
-            priority
-            draggable={false}
-          />
-        </ContainerScroll>
+        />
       </div>
-
-      <ScrollParallax isAbsolutelyPositioned strength={0.2}>
-        <Image
-          className="w-40 sm:w-80 h-auto absolute top-150 end-4 lg:end-20"
-          src="/widgets/widget-3.svg"
-          width={320}
-          height={230}
-          alt="Widget"
-        />
-      </ScrollParallax>
-
-      <ScrollParallax isAbsolutelyPositioned strength={0.3}>
-        <Image
-          className="w-40 sm:w-80 h-auto absolute top-220 end-4 lg:end-20"
-          src="/widgets/widget-4.svg"
-          width={320}
-          height={340}
-          alt="Widget"
-        />
-      </ScrollParallax>
-
-      <ScrollParallax isAbsolutelyPositioned strength={0.4}>
-        <Image
-          className="w-40 sm:w-80 h-auto absolute top-170 start-4 lg:start-20"
-          src="/widgets/widget-1.svg"
-          width={320}
-          height={90}
-          alt="Widget"
-        />
-      </ScrollParallax>
-      <ScrollParallax isAbsolutelyPositioned strength={0.5}>
-        <Image
-          className="w-40 sm:w-80 h-auto absolute top-210 start-4 lg:start-20"
-          src="/widgets/widget-2.svg"
-          width={320}
-          height={200}
-          alt="Widget"
-        />
-      </ScrollParallax>
     </section>
   );
 };

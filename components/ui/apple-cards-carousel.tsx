@@ -14,6 +14,8 @@ import {
 
 import { AnimatePresence, motion } from "motion/react";
 
+import { Button } from "@heroui/react";
+
 import { useOutsideClick } from "@/hooks/use-outside-click";
 
 import { cn } from "@/lib/utils";
@@ -23,7 +25,6 @@ import {
   IconArrowNarrowRight,
   IconX,
 } from "@tabler/icons-react";
-import { Button } from "@heroui/react";
 
 interface CarouselProps {
   items: JSX.Element[];
@@ -99,7 +100,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
     <CarouselContext.Provider
       value={{ onCardClose: handleCardClose, currentIndex }}
     >
-      <div className="relative w-full">
+      <div className="relative w-full" dir="ltr">
         <div
           className="flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth py-10 [scrollbar-width:none] md:py-20"
           ref={carouselRef}
@@ -140,28 +141,22 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
             ))}
           </div>
         </div>
-        <div className="mr-10 flex justify-end gap-2">
-          <Button
-            className={`relative z-40 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 disabled:opacity-50 !transition-all duration-100 ${
-              !canScrollLeft ? "min-w-0 px-0" : ""
-            }`}
-            onPress={scrollLeft}
-            disabled={!canScrollLeft}
-            aria-label="Previous"
-          >
-            <IconArrowNarrowLeft className="size-5 text-gray-500" />
-          </Button>
-          <Button
-            className={`relative z-40 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 disabled:opacity-50 !transition-all duration-100 ${
-              !canScrollRight ? "min-w-0 px-0" : ""
-            }`}
-            onPress={scrollRight}
-            disabled={!canScrollRight}
-            aria-label="Next"
-          >
-            <IconArrowNarrowRight className="size-5 text-gray-500" />
-          </Button>
-        </div>
+        <Button
+          className="absolute start-5 lg:start-8 top-1/2 -translate-y-1/2 z-40 min-w-0 px-0 size-8 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 disabled:opacity-50 transition-colors duration-200"
+          onPress={scrollLeft}
+          disabled={!canScrollLeft}
+          aria-label="Previous"
+        >
+          <IconArrowNarrowLeft className="size-5 text-gray-500" />
+        </Button>
+        <Button
+          className="absolute end-5 lg:end-8 top-1/2 -translate-y-1/2 z-40 min-w-0 px-0 size-8 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 disabled:opacity-50 transition-colors duration-200"
+          onPress={scrollRight}
+          disabled={!canScrollRight}
+          aria-label="Next"
+        >
+          <IconArrowNarrowRight className="size-5 text-gray-500" />
+        </Button>
       </div>
     </CarouselContext.Provider>
   );
@@ -212,7 +207,7 @@ export const Card = ({
     <>
       <AnimatePresence>
         {open && (
-          <div className="fixed inset-0 z-50 h-screen overflow-auto" dir="rtl">
+          <div className="fixed inset-0 z-50 h-screen overflow-auto">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -235,19 +230,19 @@ export const Card = ({
               </button>
               <motion.p
                 layoutId={layout ? `category-${card.title}` : undefined}
-                className="text-base font-medium text-black dark:text-white"
+                className="text-base font-medium text-black dark:text-white rtl:text-end"
               >
                 {card.category}
               </motion.p>
               <motion.p
                 layoutId={layout ? `title-${card.title}` : undefined}
-                className="mt-4 text-2xl font-semibold text-neutral-700 md:text-5xl dark:text-white"
+                className="mt-4 text-2xl font-semibold text-neutral-700 md:text-5xl dark:text-white rtl:text-end"
               >
                 {card.title}
               </motion.p>
               <div className="py-10">
                 <div className="bg-[#F5F5F7] px-8 pt-8 md:px-14 md:pt-14 rounded-3xl mb-4">
-                  <div className="text-neutral-600 text-base md:text-2xl max-w-3xl mx-auto">
+                  <div className="text-neutral-600 text-base md:text-2xl max-w-3xl mx-auto rtl:text-end">
                     <span>{card.description}</span>
                   </div>
                   {card.src && (
@@ -269,19 +264,18 @@ export const Card = ({
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
         className="relative z-10 flex h-80 w-56 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-[32rem] md:w-96 dark:bg-neutral-900"
-        dir="rtl"
       >
         <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-tl from-blue-700 to-blue-400/70" />
-        <div className="relative z-40 p-8">
+        <div className="relative w-full z-40 p-8">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
-            className="text-left text-sm font-medium text-white md:text-base"
+            className="text-start rtl:text-end text-sm font-medium text-white md:text-base"
           >
             {card.category}
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className="mt-2 max-w-xs text-left text-xl font-semibold [text-wrap:balance] text-white md:text-3xl"
+            className="mt-2 max-w-xs text-start rtl:text-end text-xl font-semibold [text-wrap:balance] text-white md:text-3xl"
           >
             {card.title}
           </motion.p>

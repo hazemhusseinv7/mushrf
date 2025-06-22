@@ -10,6 +10,8 @@ import { useTranslations } from "next-intl";
 
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
+import FullScreenPreview from "@/components/FullScreenPreview";
+
 interface TimelineEntry {
   title: string;
   description: string;
@@ -77,14 +79,15 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 <div className="grid grid-cols-2 gap-4">
                   {item.images.length > 0 &&
                     item.images.map((image, i) => (
-                      <Image
-                        key={i}
-                        src={image}
-                        alt="App preview"
-                        width={230}
-                        height={480}
-                        className="h-52 md:h-80 lg:h-120 w-auto rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                      />
+                      <FullScreenPreview key={i} src={image} alt="App preview">
+                        <Image
+                          src={image}
+                          alt="App preview"
+                          width={230}
+                          height={480}
+                          className="h-52 md:h-80 lg:h-120 w-auto rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+                        />
+                      </FullScreenPreview>
                     ))}
                 </div>
               </div>
