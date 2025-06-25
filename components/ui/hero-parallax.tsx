@@ -97,29 +97,40 @@ export const HeroParallax = ({ images }: { images: string[] }) => {
 export const Header = () => {
   const t = useTranslations("WhyUs");
 
-  const words = t("title");
+  const words = {
+    title: t("title"),
+    highlight: t("highlight"),
+  };
   const youtubeVideoUrl = process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_URL;
   const isValidYoutubeUrl = youtubeVideoUrl?.startsWith(
-    "https://www.youtube.com/"
+    "https://www.youtube.com/embed/"
   );
 
   return (
     <div className="max-w-7xl relative mx-auto px-4 w-full left-0 top-0 z-50">
       {isValidYoutubeUrl && (
-        <iframe
-          className="max-w-5xl w-full aspect-video mx-auto mb-40"
-          src={youtubeVideoUrl}
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-          loading="lazy"
-        />
+        <>
+          <span>
+            <TextGenerateEffect
+              words={words.highlight}
+              className="text-2xl md:text-7xl text-center font-bold dark:text-white mb-10"
+            />
+          </span>
+          <iframe
+            className="max-w-5xl w-full aspect-video mx-auto mb-40"
+            src={youtubeVideoUrl}
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            loading="lazy"
+          />
+        </>
       )}
 
       <h2>
         <TextGenerateEffect
-          words={words}
+          words={words.title}
           className="text-2xl md:text-7xl font-bold dark:text-white"
         />
       </h2>

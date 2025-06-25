@@ -22,6 +22,7 @@ declare const messages: {
   },
 
   "WhyUs": {
+    "highlight": "About Us",
     "title": "Why Mushrf Platform?",
     "description": "In today's rapidly evolving technological landscape, adopting digital solutions for construction management and supervision has become essential to achieve objectives with the highest standards. <name>Mushrf Platform</name> offers advanced tools that empower users to efficiently manage projects from planning through final delivery."
   },
